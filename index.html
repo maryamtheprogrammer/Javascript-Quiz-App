@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Quiz</title>
+    <style>
+        body{
+            text-align: center;
+            padding: 30px;
+            background-color: beige;
+        }
+        h1{
+            color: #fff;
+            background-color: #000;
+        }
+        button{
+            background-color: brown;
+            color: #fff;
+            width: 120px;
+            padding: 10px;
+            font-size: 16px;
+            letter-spacing: 2px;
+            font-family: serif;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .result {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .correct {
+            color: green;
+            font-weight: 700;
+        }
+        .incorrect {
+            color: red;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hey! This is a Quiz App. Want to start the quiz?</h1>
+    <button onclick="start()">Start Quiz</button>
+
+    
+    <script>
+        function start() {
+            alert("It seems like you are ready for the quiz!");
+            alert("There will be 10 questions, each question carries 5 marks.");
+            alert("In the answer you have to write option type like if option is correct then you will type a if b then type b");
+            alert("Ok best of luck!");
+
+            let score = 0;
+
+            let q1 = prompt("What is the full form of CSS?\na) Cascading Style Sheets\nb) Creative Style Sheets\nc) Computer Style Sheets\nd) Colorful Style Sheets");
+            if (q1.toLowerCase() === 'a') score += 5;
+
+            let q2 = prompt("What is the full form of 'http'?\na) HyperText Transfer Protocol\nb) HyperText Transfer Package\nc) HyperText Transfer Procedure\nd) HyperText Transfer Program");
+            if (q2.toLowerCase() === 'a') score += 5;
+
+            let q3 = prompt("Is HTML a programming language?\na) Yes\nb) No");
+            if (q3.toLowerCase() === 'b') score += 5;
+
+            let q4 = prompt("Which HTML tag is used to define an internal style sheet?\na) <script>\nb) <style>\nc) <css>\nd) <link>");
+            if (q4.toLowerCase() === 'b') score += 5;
+
+            let q5 = prompt("Which property is used to change the background color?\na) bgcolor\nb) background-color\nc) color\nd) bg-color");
+            if (q5.toLowerCase() === 'b') score += 5;
+
+            let q6 = prompt("Inside which HTML element do we put the JavaScript?\na) <js>\nb) <scripting>\nc) <script>\nd) <javascript>");
+            if (q6.toLowerCase() === 'c') score += 5;
+
+            let q7 = prompt("What is the correct syntax for referring to an external script called 'xxx.js'?\na) <script src='xxx.js'>\nb) <script href='xxx.js'>\nc) <script ref='xxx.js'>\nd) <script name='xxx.js'>");
+            if (q7.toLowerCase() === 'a') score += 5;
+
+            let q8 = prompt("How do you write 'Hello World' in an alert box?\na) msg('Hello World');\nb) alertBox('Hello World');\nc) msgBox('Hello World');\nd) alert('Hello World');");
+            if (q8.toLowerCase() === 'd') score += 5;
+
+            let q9 = prompt("How do you create a function in JavaScript?\na) function:myFunction()\nb) function = myFunction()\nc) function myFunction()\nd) function => myFunction()");
+            if (q9.toLowerCase() === 'c') score += 5;
+
+            let q10 = prompt("How do you call a function named 'myFunction'?\na) call myFunction()\nb) call function myFunction()\nc) myFunction()\nd) Call.myFunction()");
+            if (q10.toLowerCase() === 'c') score += 5;
+
+            let result = document.createElement('div');
+            result.classList.add('result');
+            result.innerHTML = `Your total score is: ${score}/50`;
+
+            if (score === 50) {
+                result.classList.add('correct');
+                result.innerHTML = 'Congrats, Your score is 50/50';
+            } else {
+                result.classList.add('incorrect');
+            }
+
+            document.body.appendChild(result);
+        }
+    </script>
+</body>
+</html>
